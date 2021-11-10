@@ -1,6 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const dbUrl = 'mongodb+srv://root:<root@123>@portfolio.zkse2.mongodb.net/portfolioDB?retryWrites=true&w=majority'
+// const dbuser = 'root';
+// const dbHost = 'portfolio.zkse2.mongodb.net'
+// const db = 'portfolio'
+// const dbUrl = `mongodb+srv://root:root123@portfolio.kg243.mongodb.net/portfolio?retryWrites=true&w=majority`;
+
+//mongodb+srv://root:<root@123>@portfolio.zkse2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 require('dotenv').config()
 const app = express()
 
@@ -15,7 +20,7 @@ app.use(cors())
 
 app.use(express.json())
 
-mongoose.connect(dbUrl,{useNewUrlParser:true})
+mongoose.connect(`mongodb+srv://root:root123@portfolio.kg243.mongodb.net/portfolio?retryWrites=true&w=majority`,{useNewUrlParser:true})
 const con = mongoose.connection
 
 

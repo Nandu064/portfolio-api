@@ -1,9 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const educationSchema = require('../modal/education')
-router.get('/', async(req,res)=>{
+router.get('/', async (req,res)=>{
     try{
         const education_doc = await educationSchema.find()
+        console.log(education_doc)
         res.json(education_doc)
         // res.send('get from education')
 

@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const contactSchema = require('../modal/contact')
-router.get('/', async(req,res)=>{
+router.get('/', async (req,res)=>{
     try{
         const contact_doc = await contactSchema.find()
         res.json(contact_doc)
