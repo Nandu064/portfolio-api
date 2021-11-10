@@ -24,6 +24,10 @@ const educationSchema = new mongoose.Schema({
     end_year:{
         type: Number,
         required: true
+    },
+    board:{
+        type: String,
+        required: true,
     }
 
 })
