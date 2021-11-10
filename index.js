@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const dbUrl = 'mongodb://localhost/portfolioDB'
+const dbUrl = 'mongodb+srv://root:<root@123>@portfolio.zkse2.mongodb.net/portfolioDB?retryWrites=true&w=majority'
 require('dotenv').config()
 const app = express()
 
