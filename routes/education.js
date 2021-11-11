@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const educationSchema = require('../modal/education')
+const education = require('../modal/education')
 router.get('/', async (req,res)=>{
     try{
-        const education_doc = await educationSchema.find()
+        const education_doc = await education.find()
         console.log(education_doc)
         res.json(education_doc)
         // res.send('get from education')
@@ -16,7 +16,7 @@ router.get('/', async (req,res)=>{
 router.post("/", async (req, res) => {
     try {
       console.log("body", req.body);
-      const education = new educationSchema(req.body);
+      const education = new education(req.body);
       const education_doc = await education.save();
       console.log("education_doc", education_doc);
       res.json(education_doc);
@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
 
 router.delete('/:id',async (req,res)=>{
     try{
-        const educationDelete = await educationSchema.findById(req.params.id)
+        const educationDelete = await education.findById(req.params.id)
         const education_doc = await educationDelete.delete()
         res.send(education_doc)
     }catch(err){
