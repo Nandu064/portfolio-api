@@ -49,12 +49,12 @@ router.post("/", async (req, res) => {
 router.patch('/:id',async (req,res)=>{
     try{
         const project = await projectSchema.findById(req.params.id)
-        console.log(req.params.id)
         project.title = req.body.title;
         project.description = req.body.description;
         project.git_hub = req.body.git_hub;
         project.start_date = req.body.start_date;
         project.end_date = req.body.end_date;
+        project.demo_url = req.body.demo_url;
         const updated_doc = await project.save()
         res.json(updated_doc)
     }
