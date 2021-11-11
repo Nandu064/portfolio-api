@@ -21,11 +21,11 @@ router.get('/:id', async(req,res)=>{
     try{
         const{ id } = req.params
         console.log(req.params)
-        const project_doc = await projectSchema.findOne({
-            id
-        })
+        const project_doc = await projectSchema.findById(id)
+        console.log(project_doc)
+        project_doc?
         res.json(project_doc)
-        // res.send('get from project')
+        :res.json({"error":`No project with the id ${id}`})
 
     }catch(err){
         res.send('error',err)
